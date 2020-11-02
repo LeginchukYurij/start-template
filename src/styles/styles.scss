@@ -1,0 +1,15 @@
+@import "untils/variables";
+@import "mixins/mixins";
+
+// Blocks
+@import "common/global";
+@import "common/header";
+@import "common/footer";
+
+
+// Pages
+@import "pages/index/index-styles";
+
+
+//  Always at the end
+@import "common/media";

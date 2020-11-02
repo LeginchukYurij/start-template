@@ -1,0 +1,23 @@
+doctype html
+html(lang="ru")
+    block head
+        head
+            meta(charset="utf-8")
+            title Title your site
+            meta(content="width=device-width, initial-scale=1" name="viewport")
+            meta(content="ie=edge" http-equiv="x-ua-compatible")
+            link(rel="stylesheet" href="libs/hamburger.min.css")
+            link(rel="stylesheet" href="libs/reset.min.css")
+            link(rel="stylesheet" href="fonts/fontface.css")
+            link(rel="stylesheet" href="css/styles.css")
+    body
+        block header
+            include header
+        block content
+
+        block footer
+            include footer
+        block scripts
+            script(src='libs/jquery.min.js')
+            script(src="libs/jquery.inview.min.js")
+            script(src='js/main.js')
