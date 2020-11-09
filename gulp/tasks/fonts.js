@@ -2,10 +2,12 @@ const isWin = process.platform === "win32";
 
 const gulp = require('gulp');
 
-const fontfacegen = require('fontfacegen');
-const  map = require('map-stream');
 
 if(!isWin) {
+
+    const fontfacegen = require('fontfacegen');
+    const  map = require('map-stream');
+
     module.exports =  function fontgen() {
         return gulp.src("src/fonts/**/*.{ttf,otf}")
             .pipe(map(function(file, cb) {
