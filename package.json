@@ -29,6 +29,7 @@
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
+    "gulp-debug": "^4.0.0",
     "gulp-deploy-git": "^0.5.3",
     "gulp-eslint": "^6.0.0",
     "gulp-imagemin": "^7.1.0",

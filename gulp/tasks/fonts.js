@@ -1,6 +1,7 @@
 const isWin = process.platform === "win32";
 
 const gulp = require('gulp');
+const debug = require('gulp-debug');
 
 
 if(!isWin) {
@@ -24,6 +25,7 @@ if(!isWin) {
 } else {
     module.exports =  function fontgen() {
         return gulp.src("src/fonts/**/*")
+            .pipe(debug({title: 'fonts:'}))
             .pipe(gulp.dest('build/fonts'))
 
     };

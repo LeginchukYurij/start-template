@@ -8,6 +8,7 @@ const script = require('./script');
 const fonts = require('./fonts');
 const libsJS = require('./libsJs');
 const libsCss = require('./libsCss');
+const cleanImgDirectory = require('./cleanImgDir');
 
 const server = require('browser-sync').create()
 
@@ -24,7 +25,7 @@ module.exports = function serve(cb) {
         cors: true
     })
 
-    gulp.watch('src/img/**/*.{gif,png,jpg,svg,webp}', gulp.series(clean, imageMinify, readyReload))
+    gulp.watch('src/img/**/*.{gif,png,jpg,svg,webp}', gulp.series(cleanImgDirectory, imageMinify, readyReload))
     gulp.watch('src/styles/**/*.scss', gulp.series(styles, cb => gulp.src('build/css').pipe(server.stream()).on('end', cb)))
     gulp.watch('src/js/**/*.js', gulp.series(script, readyReload))
     gulp.watch('src/pages/**/*.pug', gulp.series(pug2html, readyReload))

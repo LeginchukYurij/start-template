@@ -3,6 +3,7 @@ const plumber = require('gulp-plumber');
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
+const debug = require('gulp-debug');
 
 
 module.exports = function styles() {
@@ -14,5 +15,6 @@ module.exports = function styles() {
                 cascade: false
             }))
         .pipe(sourcemaps.write())
+        .pipe(debug({title: 'styles:'}))
         .pipe(gulp.dest('build/css'))
 }
